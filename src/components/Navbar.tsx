@@ -68,7 +68,7 @@ export default function Navbar() {
           <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-500 font-bold text-white">
             LOGO
           </div>
-          <span className="text-lg font-semibold text-gray-700">ชื่อแบรนด์</span>
+          <span className="text-lg font-semibold text-gray-700">ชื่อ IDEA</span>
         </a>
 
         {/* Desktop menu */}
