@@ -32,12 +32,12 @@ export default function News() {
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="mb-10 flex items-end justify-between">
           <div>
-            <h2 className="text-3xl font-bold text-green-800">ข่าวประชาสัมพันธ์</h2>
+            <h2 className="text-3xl font-bold text-gray-700">ข่าวประชาสัมพันธ์</h2>
             <p className="mt-2 text-gray-600">ข่าวสารและกิจกรรมล่าสุด (placeholder)</p>
           </div>
           <a
             href="#news"
-            className="hidden rounded-full border border-green-700 px-5 py-2 text-sm font-medium text-green-700 transition-colors hover:bg-green-700 hover:text-white sm:inline-block"
+            className="hidden rounded-full border border-green-500 px-5 py-2 text-sm font-medium text-green-600 transition-colors hover:bg-green-500 hover:text-white sm:inline-block"
           >
             ดูทั้งหมด
           </a>
@@ -56,13 +56,13 @@ export default function News() {
                   alt={item.title}
                   className="h-48 w-full object-cover"
                 />
-                <div className="absolute left-3 top-3 rounded-lg bg-green-700 px-3 py-1.5 text-center text-white">
+                <div className="absolute left-3 top-3 rounded-lg bg-orange-500 px-3 py-1.5 text-center text-white">
                   <div className="text-lg font-bold leading-none">{item.date.day}</div>
                   <div className="text-xs">{item.date.month}</div>
                 </div>
               </div>
               <div className="p-5">
-                <h3 className="mb-2 line-clamp-2 text-base font-semibold text-gray-800 group-hover:text-green-700">
+                <h3 className="mb-2 line-clamp-2 text-base font-semibold text-gray-800 group-hover:text-green-600">
                   {item.title}
                 </h3>
                 <p className="line-clamp-2 text-sm text-gray-600">{item.excerpt}</p>
@@ -74,7 +74,7 @@ export default function News() {
         <div className="mt-8 text-center sm:hidden">
           <a
             href="#news"
-            className="inline-block rounded-full border border-green-700 px-5 py-2 text-sm font-medium text-green-700 hover:bg-green-700 hover:text-white"
+            className="inline-block rounded-full border border-green-500 px-5 py-2 text-sm font-medium text-green-600 hover:bg-green-500 hover:text-white"
           >
             ดูทั้งหมด
           </a>

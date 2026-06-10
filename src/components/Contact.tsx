@@ -83,7 +83,7 @@ export default function Contact() {
     <main className="bg-green-50/40">
       <div className="mx-auto max-w-7xl px-4 py-14 lg:px-8">
         <div className="mb-10">
-          <h1 className="text-3xl font-bold text-green-900 md:text-4xl">ติดต่อสอบถาม</h1>
+          <h1 className="text-3xl font-bold text-gray-700 md:text-4xl">ติดต่อสอบถาม</h1>
           <p className="mt-2 text-gray-600">
             ช่องทางการติดต่อและแบบฟอร์มสำหรับสอบถามข้อมูลกับทาง IDEA
           </p>
@@ -92,11 +92,11 @@ export default function Contact() {
         <div className="grid gap-8 lg:grid-cols-2">
           {/* Contact info */}
           <div className="rounded-2xl bg-white p-7 shadow-sm ring-1 ring-gray-100">
-            <h2 className="mb-5 text-xl font-semibold text-green-800">ข้อมูลการติดต่อ</h2>
+            <h2 className="mb-5 text-xl font-semibold text-gray-700">ข้อมูลการติดต่อ</h2>
             <ul className="space-y-5">
               {infoItems.map((item) => (
                 <li key={item.label} className="flex gap-4">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-green-100 text-green-700">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-green-100 text-green-600">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       {item.icon}
                     </svg>
@@ -112,11 +112,11 @@ export default function Contact() {
 
           {/* Contact form */}
           <div className="rounded-2xl bg-white p-7 shadow-sm ring-1 ring-gray-100">
-            <h2 className="mb-5 text-xl font-semibold text-green-800">แบบฟอร์มติดต่อ</h2>
+            <h2 className="mb-5 text-xl font-semibold text-gray-700">แบบฟอร์มติดต่อ</h2>
 
             {sent ? (
               <div className="rounded-xl bg-green-50 p-6 text-center ring-1 ring-green-200">
-                <p className="font-semibold text-green-800">ส่งข้อมูลเรียบร้อยแล้ว</p>
+                <p className="font-semibold text-gray-700">ส่งข้อมูลเรียบร้อยแล้ว</p>
                 <p className="mt-1 text-sm text-gray-600">
                   ขอบคุณที่ติดต่อเรา ทีมงานจะติดต่อกลับโดยเร็วที่สุด
                 </p>
@@ -128,7 +128,7 @@ export default function Contact() {
                     setType(contactTypes[0]);
                     setMessage("");
                   }}
-                  className="mt-4 rounded-lg border border-green-700 px-5 py-2 text-sm font-medium text-green-700 hover:bg-green-50"
+                  className="mt-4 rounded-lg border border-green-500 px-5 py-2 text-sm font-medium text-green-600 hover:bg-green-50"
                 >
                   ส่งข้อความใหม่
                 </button>
@@ -145,7 +145,7 @@ export default function Contact() {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="กรอกชื่อ-นามสกุลของคุณ"
-                    className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm outline-none focus:border-green-600 focus:ring-1 focus:ring-green-600"
+                    className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500"
                   />
                 </div>
 
@@ -159,7 +159,7 @@ export default function Contact() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="example@email.com"
-                    className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm outline-none focus:border-green-600 focus:ring-1 focus:ring-green-600"
+                    className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500"
                   />
                 </div>
 
@@ -170,7 +170,7 @@ export default function Contact() {
                   <select
                     value={type}
                     onChange={(e) => setType(e.target.value)}
-                    className="w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm outline-none focus:border-green-600 focus:ring-1 focus:ring-green-600"
+                    className="w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500"
                   >
                     {contactTypes.map((t) => (
                       <option key={t} value={t}>
@@ -190,13 +190,13 @@ export default function Contact() {
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder="กรอกรายละเอียดหรือข้อความที่ต้องการติดต่อ"
-                    className="w-full resize-y rounded-lg border border-gray-300 px-4 py-2.5 text-sm outline-none focus:border-green-600 focus:ring-1 focus:ring-green-600"
+                    className="w-full resize-y rounded-lg border border-gray-300 px-4 py-2.5 text-sm outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full rounded-lg bg-green-700 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-green-800"
+                  className="w-full rounded-lg bg-green-500 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-green-600"
                 >
                   ส่งข้อมูล
                 </button>

@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 
 // TODO: แทนที่ด้วยรูปจริงของคุณ
 const slides = [
-  { id: 1, image: "https://placehold.co/1600x600/166534/ffffff?text=Slide+1", caption: "สไลด์ที่ 1" },
-  { id: 2, image: "https://placehold.co/1600x600/15803d/ffffff?text=Slide+2", caption: "สไลด์ที่ 2" },
-  { id: 3, image: "https://placehold.co/1600x600/22c55e/ffffff?text=Slide+3", caption: "สไลด์ที่ 3" },
+  { id: 1, image: "https://placehold.co/1600x600/22c55e/ffffff?text=Slide+1", caption: "สไลด์ที่ 1" },
+  { id: 2, image: "https://placehold.co/1600x600/f97316/ffffff?text=Slide+2", caption: "สไลด์ที่ 2" },
+  { id: 3, image: "https://placehold.co/1600x600/374151/ffffff?text=Slide+3", caption: "สไลด์ที่ 3" },
 ];
 
 export default function HeroSlide() {

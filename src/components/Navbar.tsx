@@ -1,49 +1,118 @@
 import { useState } from "react";
 
-const menuItems = [
+type SubItem = { label: string; href: string; external?: boolean };
+type MenuItem = { label: string; href?: string; children?: SubItem[] };
+
+const menuItems: MenuItem[] = [
   { label: "หน้าหลัก", href: "#home" },
-  { label: "เกี่ยวกับเรา", href: "#about" },
+  {
+    label: "เกี่ยวกับเรา",
+    children: [
+      { label: "IDEA คืออะไร", href: "#/about/idea" },
+      { label: "วิสัยทัศน์ พันธกิจ และเป้าหมาย", href: "#/about/vision" },
+      { label: "โครงสร้างคณะและองค์กร", href: "#/about/structure" },
+      { label: "คณะกรรมการดำเนินงาน", href: "#/about/committee" },
+      { label: "บุคลากรตึก", href: "#/about/staff" },
+    ],
+  },
   { label: "บริการของเรา", href: "#services" },
   { label: "ประชาสัมพันธ์", href: "#news" },
-  { label: "หน่วยงานความร่วมมือ", href: "#partners" },
-  { label: "แถบรายการเครื่องมือ", href: "#tools" },
+  {
+    label: "หน่วยงานความร่วมมือ",
+    children: [
+      { label: "สำนักงานนวัตกรรมแห่งชาติ", href: "https://www.nia.or.th/", external: true },
+      { label: "กระทรวง อว.", href: "https://www.mhesi.go.th/", external: true },
+      { label: "Food Innopolis", href: "https://foodinnopolis.or.th/en/home/", external: true },
+      { label: "มหาวิทยาลัยนเรศวร", href: "https://www.nu.ac.th/", external: true },
+      { label: "ภาควิชาอุตสาหกรรมเกษตร คณะเกษตรศาสตร์ฯ", href: "https://www.agro.agi.nu.ac.th/", external: true },
+      { label: "อุทยานวิทยาศาสตร์และเทคโนโลยี", href: "https://scipark.nu.ac.th/", external: true },
+    ],
+  },
+  {
+    label: "แถบรายการเครื่องมือ",
+    children: [
+      { label: "เครื่องมือแปรรูป", href: "#/tools/processing" },
+      { label: "เครื่องมือวิเคราะห์", href: "#/tools/analysis" },
+      { label: "เครื่องมือห้องเบเกอรี่", href: "#/tools/bakery" },
+    ],
+  },
   { label: "ขั้นตอนการส่งตัวอย่าง", href: "#sample-process" },
   { label: "ติดต่อสอบถาม", href: "#/contact" },
 ];
 
+const ChevronDown = ({ className = "" }: { className?: string }) => (
+  <svg
+    className={className}
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <polyline points="6 9 12 15 18 9" />
+  </svg>
+);
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [mobileSub, setMobileSub] = useState<string | null>(null);
 
   return (
     <nav className="sticky top-0 z-50 bg-white/95 shadow-sm backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 lg:px-8">
         {/* Logo */}
         <a href="#home" className="flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-700 font-bold text-white">
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-500 font-bold text-white">
             LOGO
           </div>
-          <span className="text-lg font-semibold text-green-800">
-            ชื่อแบรนด์
-          </span>
+          <span className="text-lg font-semibold text-gray-700">ชื่อแบรนด์</span>
         </a>
 
         {/* Desktop menu */}
         <ul className="hidden items-center gap-4 lg:flex xl:gap-6">
-          {menuItems.map((item) => (
-            <li key={item.label}>
-              <a
-                href={item.href}
-                className="text-sm font-medium text-gray-700 transition-colors hover:text-green-700"
-              >
-                {item.label}
-              </a>
-            </li>
-          ))}
+          {menuItems.map((item) =>
+            item.children ? (
+              <li key={item.label} className="group relative">
+                <button className="flex items-center gap-1 text-sm font-medium text-gray-700 transition-colors hover:text-green-600">
+                  {item.label}
+                  <ChevronDown className="transition-transform group-hover:rotate-180" />
+                </button>
+                {/* Dropdown */}
+                <ul className="invisible absolute left-0 top-full z-50 w-64 translate-y-1 rounded-xl border border-gray-100 bg-white py-2 opacity-0 shadow-lg transition-all duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                  {item.children.map((sub) => (
+                    <li key={sub.label}>
+                      <a
+                        href={sub.href}
+                        {...(sub.external
+                          ? { target: "_blank", rel: "noopener noreferrer" }
+                          : {})}
+                        className="block px-4 py-2 text-sm text-gray-700 transition-colors hover:bg-green-50 hover:text-green-600"
+                      >
+                        {sub.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ) : (
+              <li key={item.label}>
+                <a
+                  href={item.href}
+                  className="text-sm font-medium text-gray-700 transition-colors hover:text-green-600"
+                >
+                  {item.label}
+                </a>
+              </li>
+            )
+          )}
         </ul>
 
         {/* Mobile toggle */}
         <button
-          className="lg:hidden text-gray-700"
+          className="text-gray-700 lg:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-label="เมนู"
         >
@@ -67,17 +136,53 @@ export default function Navbar() {
       {/* Mobile menu */}
       {open && (
         <ul className="flex flex-col gap-1 border-t bg-white px-4 py-2 lg:hidden">
-          {menuItems.map((item) => (
-            <li key={item.label}>
-              <a
-                href={item.href}
-                className="block rounded px-2 py-2 text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-green-700"
-                onClick={() => setOpen(false)}
-              >
-                {item.label}
-              </a>
-            </li>
-          ))}
+          {menuItems.map((item) =>
+            item.children ? (
+              <li key={item.label}>
+                <button
+                  onClick={() =>
+                    setMobileSub((s) => (s === item.label ? null : item.label))
+                  }
+                  className="flex w-full items-center justify-between rounded px-2 py-2 text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-green-600"
+                >
+                  {item.label}
+                  <ChevronDown
+                    className={`transition-transform ${
+                      mobileSub === item.label ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+                {mobileSub === item.label && (
+                  <ul className="mb-1 ml-3 border-l border-gray-200 pl-3">
+                    {item.children.map((sub) => (
+                      <li key={sub.label}>
+                        <a
+                          href={sub.href}
+                          {...(sub.external
+                            ? { target: "_blank", rel: "noopener noreferrer" }
+                            : {})}
+                          className="block rounded px-2 py-2 text-sm text-gray-600 hover:bg-green-50 hover:text-green-600"
+                          onClick={() => setOpen(false)}
+                        >
+                          {sub.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            ) : (
+              <li key={item.label}>
+                <a
+                  href={item.href}
+                  className="block rounded px-2 py-2 text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-green-600"
+                  onClick={() => setOpen(false)}
+                >
+                  {item.label}
+                </a>
+              </li>
+            )
+          )}
         </ul>
       )}
     </nav>
