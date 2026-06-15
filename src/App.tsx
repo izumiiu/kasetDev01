@@ -4,6 +4,7 @@ import HeroSlide from "./components/HeroSlide";
 import WhyUs from "./components/WhyUs";
 import Service from "./components/Service";
 import News from "./components/News";
+import EventCalendar from "./components/EventCalendar";
 import SampleProcess from "./components/SampleProcess";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
@@ -33,6 +34,7 @@ function App() {
           <HeroSlide />
           <WhyUs />
           <News />
+          <EventCalendar />
           <Service />
           <SampleProcess />
         </main>

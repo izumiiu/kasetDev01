@@ -16,7 +16,17 @@ const menuItems: MenuItem[] = [
     ],
   },
   { label: "บริการของเรา", href: "#services" },
+  { label: "GMP", href: "#/gmp" },
   { label: "ประชาสัมพันธ์", href: "#news" },
+  {
+    label: "แถบรายการเครื่องมือ",
+    children: [
+      { label: "เครื่องมือแปรรูป", href: "#/tools/processing" },
+      { label: "เครื่องมือวิเคราะห์", href: "#/tools/analysis" },
+      { label: "เครื่องมือห้องเบเกอรี่", href: "#/tools/bakery" },
+    ],
+  },
+  { label: "ขั้นตอนการส่งตัวอย่าง", href: "#sample-process" },
   {
     label: "หน่วยงานความร่วมมือ",
     children: [
@@ -28,15 +38,6 @@ const menuItems: MenuItem[] = [
       { label: "อุทยานวิทยาศาสตร์และเทคโนโลยี", href: "https://scipark.nu.ac.th/", external: true },
     ],
   },
-  {
-    label: "แถบรายการเครื่องมือ",
-    children: [
-      { label: "เครื่องมือแปรรูป", href: "#/tools/processing" },
-      { label: "เครื่องมือวิเคราะห์", href: "#/tools/analysis" },
-      { label: "เครื่องมือห้องเบเกอรี่", href: "#/tools/bakery" },
-    ],
-  },
-  { label: "ขั้นตอนการส่งตัวอย่าง", href: "#sample-process" },
   { label: "ติดต่อสอบถาม", href: "#/contact" },
 ];
 

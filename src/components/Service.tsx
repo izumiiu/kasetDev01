@@ -1,10 +1,11 @@
-// TODO: แทนที่รูปและข้อความด้วยข้อมูลบริการจริง 5 อย่าง
+// TODO: แทนที่รูปและข้อความด้วยข้อมูลบริการจริง 6 อย่าง
 const services = [
-  { id: 1, title: "บริการที่ 1", desc: "รายละเอียดบริการ (placeholder)", image: "https://placehold.co/400x300/22c55e/ffffff?text=Service+1" },
-  { id: 2, title: "บริการที่ 2", desc: "รายละเอียดบริการ (placeholder)", image: "https://placehold.co/400x300/16a34a/ffffff?text=Service+2" },
-  { id: 3, title: "บริการที่ 3", desc: "รายละเอียดบริการ (placeholder)", image: "https://placehold.co/400x300/f97316/ffffff?text=Service+3" },
-  { id: 4, title: "บริการที่ 4", desc: "รายละเอียดบริการ (placeholder)", image: "https://placehold.co/400x300/374151/ffffff?text=Service+4" },
-  { id: 5, title: "บริการที่ 5", desc: "รายละเอียดบริการ (placeholder)", image: "https://placehold.co/400x300/4b5563/ffffff?text=Service+5" },
+  { id: 1, title: "IDEA SERVICES", desc: "บริการให้คำปรึกษาเพื่อพัฒนาผลิตภัณฑ์ และ การขอเลข อย.", image: "https://placehold.co/400x300/22c55e/ffffff?text=Service+1" },
+  { id: 2, title: "IDEA TRAINNING", desc: "การฝึกอบรมด้านเทคโนโลยีการผลิตและนวัตกรรมใหม่ๆ", image: "https://placehold.co/400x300/16a34a/ffffff?text=Service+2" },
+  { id: 3, title: "IDEA R&D", desc: "บริการการวิจัยและพัฒนานวัตกรรมผลิตภัณฑ์อาหารในระดับห้องปฏิบัติการ", image: "https://placehold.co/400x300/f97316/ffffff?text=Service+3" },
+  { id: 4, title: "IDEA PILOT PLANT", desc: "บริการสายการผลิตผลิตภัณฑ์ผักผลไม้แปรรูปและเครื่องดื่มที่ได้มาตรฐาน", image: "https://placehold.co/400x300/374151/ffffff?text=Service+4" },
+  { id: 5, title: "IDEA FOOD LAB", desc: "บริการตรวจวิเคราะห์ ทดสอบคุณภาพทางด้านเคมีกายภาพและจุลชีววิทยาในผลผลิตทางเกษตรและอาหาร", image: "https://placehold.co/400x300/4b5563/ffffff?text=Service+5" },
+  { id: 6, title: "IDEA MARKER SPACE", desc: "บริการพื้นที่/เครื่องมือ/อุปกรณ์/ครัวทดลอง เพื่อทดลองปฏิบัติจริง", image: "https://placehold.co/400x300/166534/ffffff?text=Service+6" },
 ];
 
 export default function Service() {
@@ -18,7 +19,7 @@ export default function Service() {
           </p>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s) => (
             <div
               key={s.id}
