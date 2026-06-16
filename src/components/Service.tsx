@@ -1,4 +1,4 @@
-// TODO: แทนที่รูปและข้อความด้วยข้อมูลบริการจริง 6 อย่าง
+// TODO: แทนที่รูปและข้อความด้วยข้อมูลบริการจริง 7 อย่าง
 const services = [
   { id: 1, title: "IDEA SERVICES", desc: "บริการให้คำปรึกษาเพื่อพัฒนาผลิตภัณฑ์ และ การขอเลข อย.", image: "https://placehold.co/400x300/22c55e/ffffff?text=Service+1" },
   { id: 2, title: "IDEA TRAINNING", desc: "การฝึกอบรมด้านเทคโนโลยีการผลิตและนวัตกรรมใหม่ๆ", image: "https://placehold.co/400x300/16a34a/ffffff?text=Service+2" },
@@ -6,6 +6,7 @@ const services = [
   { id: 4, title: "IDEA PILOT PLANT", desc: "บริการสายการผลิตผลิตภัณฑ์ผักผลไม้แปรรูปและเครื่องดื่มที่ได้มาตรฐาน", image: "https://placehold.co/400x300/374151/ffffff?text=Service+4" },
   { id: 5, title: "IDEA FOOD LAB", desc: "บริการตรวจวิเคราะห์ ทดสอบคุณภาพทางด้านเคมีกายภาพและจุลชีววิทยาในผลผลิตทางเกษตรและอาหาร", image: "https://placehold.co/400x300/4b5563/ffffff?text=Service+5" },
   { id: 6, title: "IDEA MARKER SPACE", desc: "บริการพื้นที่/เครื่องมือ/อุปกรณ์/ครัวทดลอง เพื่อทดลองปฏิบัติจริง", image: "https://placehold.co/400x300/166534/ffffff?text=Service+6" },
+  { id: 7, title: "IDEA ROOM", desc: "บริการพื้นที่ และห้องปฏิบัติการภายในอาคารนวัตกรรมฯ", image: "https://placehold.co/400x300/15803d/ffffff?text=Service+7" },
 ];
 
 export default function Service() {
@@ -20,24 +21,30 @@ export default function Service() {
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((s) => (
-            <div
-              key={s.id}
-              className="overflow-hidden rounded-2xl bg-white shadow-sm transition-shadow hover:shadow-md"
-            >
-              <img
-                src={s.image}
-                alt={s.title}
-                className="h-40 w-full object-cover"
-              />
-              <div className="p-4">
-                <h3 className="mb-1 text-base font-semibold text-gray-800">
-                  {s.title}
-                </h3>
-                <p className="text-sm text-gray-600">{s.desc}</p>
+          {services.map((s, i) => {
+            const isLastAlone =
+              i === services.length - 1 && services.length % 3 === 1;
+            return (
+              <div
+                key={s.id}
+                className={`overflow-hidden rounded-2xl bg-white shadow-sm transition-shadow hover:shadow-md ${
+                  isLastAlone ? "lg:col-start-2" : ""
+                }`}
+              >
+                <img
+                  src={s.image}
+                  alt={s.title}
+                  className="h-40 w-full object-cover"
+                />
+                <div className="p-4">
+                  <h3 className="mb-1 text-base font-semibold text-gray-800">
+                    {s.title}
+                  </h3>
+                  <p className="text-sm text-gray-600">{s.desc}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

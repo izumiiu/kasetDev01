@@ -32,21 +32,14 @@ const steps = [
   },
 ];
 
-const details = [
-  { label: "ระยะเวลาดำเนินการ", value: "ประมาณ 7–15 วันทำการ ขึ้นอยู่กับประเภทการวิเคราะห์" },
-  { label: "เอกสารที่ต้องเตรียม", value: "แบบฟอร์มส่งตัวอย่าง และข้อมูลรายละเอียดของตัวอย่าง" },
-  { label: "การจัดส่งตัวอย่าง", value: "ส่งด้วยตนเอง ณ อาคาร IDEA หรือทางไปรษณีย์/ขนส่ง" },
-  { label: "สอบถามเพิ่มเติม", value: "โทร 0-5596-XXXX หรืออีเมล idea@nu.ac.th" },
-];
-
 export default function SampleProcess() {
   return (
     <section id="sample-process" className="bg-white py-16">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="mx-auto mb-12 max-w-2xl text-center">
-          <span className="inline-block rounded-full bg-orange-100 px-3 py-1 text-sm font-medium text-orange-600">
+          {/* <span className="inline-block rounded-full bg-orange-100 px-3 py-1 text-sm font-medium text-orange-600">
             ขั้นตอนการให้บริการ
-          </span>
+          </span> */}
           <h2 className="mt-3 text-3xl font-bold text-gray-700">ขั้นตอนการส่งตัวอย่าง</h2>
           <p className="mt-3 text-gray-600">
             ขั้นตอนการส่งตัวอย่างเพื่อวิเคราะห์และทดสอบกับทาง IDEA (placeholder)
@@ -67,29 +60,6 @@ export default function SampleProcess() {
               <p className="text-sm leading-relaxed text-gray-600">{s.desc}</p>
             </div>
           ))}
-        </div>
-
-        {/* Details */}
-        <div className="mt-12 rounded-2xl bg-gray-50 p-8 ring-1 ring-gray-100">
-          <h3 className="mb-6 text-xl font-semibold text-gray-700">ข้อมูลและรายละเอียดเพิ่มเติม</h3>
-          <div className="grid gap-6 sm:grid-cols-2">
-            {details.map((d) => (
-              <div key={d.label} className="flex gap-3 border-l-4 border-orange-500 pl-4">
-                <div>
-                  <div className="text-sm font-semibold text-gray-700">{d.label}</div>
-                  <div className="mt-1 text-sm text-gray-600">{d.value}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="mt-8">
-            <a
-              href="#/contact"
-              className="inline-block rounded-lg bg-green-500 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-green-600"
-            >
-              ติดต่อสอบถามการส่งตัวอย่าง
-            </a>
-          </div>
         </div>
       </div>
     </section>

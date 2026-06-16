@@ -16,17 +16,15 @@ const menuItems: MenuItem[] = [
     ],
   },
   { label: "บริการของเรา", href: "#services" },
-  { label: "GMP", href: "#/gmp" },
-  { label: "ประชาสัมพันธ์", href: "#news" },
   {
-    label: "แถบรายการเครื่องมือ",
+    label: "Certificate",
     children: [
-      { label: "เครื่องมือแปรรูป", href: "#/tools/processing" },
-      { label: "เครื่องมือวิเคราะห์", href: "#/tools/analysis" },
-      { label: "เครื่องมือห้องเบเกอรี่", href: "#/tools/bakery" },
+      { label: "GMP", href: "#/certificate/gmp" },
+      { label: "ISO/IEC 17025 : 2017", href: "#/certificate/iso-17025" },
     ],
   },
-  { label: "ขั้นตอนการส่งตัวอย่าง", href: "#sample-process" },
+  { label: "ประชาสัมพันธ์", href: "#news" },
+  { label: "ขั้นตอนการส่งตัวอย่าง", href: "#equipment-service" },
   {
     label: "หน่วยงานความร่วมมือ",
     children: [
