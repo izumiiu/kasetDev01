@@ -10,6 +10,8 @@ import SampleProcess from "./components/SampleProcess";
 import FormDownloads from "./components/FormDownloads";
 import Contact from "./components/Contact";
 import GmpPage from "./components/GmpPage";
+import InstrumentPage from "./components/InstrumentPage";
+import InstrumentDetail from "./components/InstrumentDetail";
 import Footer from "./components/Footer";
 
 function getRoute() {
@@ -27,6 +29,10 @@ function App() {
 
   const isContact = route.startsWith("/contact");
   const isGmp = route.startsWith("/certificate/gmp");
+  const isInstrument = route.startsWith("/instrument/");
+  const instrumentSlug = isInstrument ? route.replace("/instrument/", "") : "";
+  const isInstrumentDetail = route.startsWith("/instrument-detail/");
+  const instrumentDetailId = isInstrumentDetail ? route.replace("/instrument-detail/", "") : "";
 
   return (
     <div className="min-h-screen font-thai">
@@ -35,6 +41,10 @@ function App() {
         <Contact />
       ) : isGmp ? (
         <GmpPage />
+      ) : isInstrumentDetail ? (
+        <InstrumentDetail id={instrumentDetailId} />
+      ) : isInstrument ? (
+        <InstrumentPage slug={instrumentSlug} />
       ) : (
         <main>
           <HeroSlide />

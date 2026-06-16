@@ -49,15 +49,22 @@ export default function Footer() {
             <div className="mt-6">
               <h4 className="mb-3 text-base font-semibold text-white">ติดตามเรา</h4>
               <div className="flex gap-3">
-                <a href="#" aria-label="Facebook" className="rounded-full bg-gray-700 p-2 transition-colors hover:bg-green-500">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                <a
+                  href="#"
+                  aria-label="Facebook"
+                  className="flex h-9 w-9 items-center justify-center rounded-full bg-white shadow-sm transition-transform hover:-translate-y-0.5"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="#1877F2" aria-hidden="true">
+                    <path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07c0 6.03 4.39 11.03 10.13 11.93v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.88v2.26h3.32l-.53 3.49h-2.79v8.44C19.61 23.1 24 18.1 24 12.07Z" />
                   </svg>
                 </a>
-                <a href="#" aria-label="Line" className="rounded-full bg-gray-700 p-2 transition-colors hover:bg-green-500">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M21 11.5c0-4.14-4.03-7.5-9-7.5s-9 3.36-9 7.5c0 3.71 3.2 6.82 7.52 7.41.29.06.69.2.79.45.09.23.06.59.03.82l-.13.77c-.04.23-.18.9.79.49 1.9-.8 5.2-3.06 7.1-5.24A6.67 6.67 0 0 0 21 11.5Z" />
-                    <path d="M8 9.5v4M8 9.5l2.5 4v-4M14 9.5h-2v4h2M12 11.5h1.5M16 9.5v4h2" />
+                <a
+                  href="#"
+                  aria-label="Line"
+                  className="flex h-9 w-9 items-center justify-center rounded-full bg-white shadow-sm transition-transform hover:-translate-y-0.5"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="#06C755" aria-hidden="true">
+                    <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
                   </svg>
                 </a>
               </div>

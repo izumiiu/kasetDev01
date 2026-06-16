@@ -3,9 +3,9 @@ const services = [
   { id: 1, title: "IDEA SERVICES", desc: "บริการให้คำปรึกษาเพื่อพัฒนาผลิตภัณฑ์ และ การขอเลข อย.", image: "https://placehold.co/400x300/22c55e/ffffff?text=Service+1" },
   { id: 2, title: "IDEA TRAINNING", desc: "การฝึกอบรมด้านเทคโนโลยีการผลิตและนวัตกรรมใหม่ๆ", image: "https://placehold.co/400x300/16a34a/ffffff?text=Service+2" },
   { id: 3, title: "IDEA R&D", desc: "บริการการวิจัยและพัฒนานวัตกรรมผลิตภัณฑ์อาหารในระดับห้องปฏิบัติการ", image: "https://placehold.co/400x300/f97316/ffffff?text=Service+3" },
-  { id: 4, title: "IDEA PILOT PLANT", desc: "บริการสายการผลิตผลิตภัณฑ์ผักผลไม้แปรรูปและเครื่องดื่มที่ได้มาตรฐาน", image: "https://placehold.co/400x300/374151/ffffff?text=Service+4" },
-  { id: 5, title: "IDEA FOOD LAB", desc: "บริการตรวจวิเคราะห์ ทดสอบคุณภาพทางด้านเคมีกายภาพและจุลชีววิทยาในผลผลิตทางเกษตรและอาหาร", image: "https://placehold.co/400x300/4b5563/ffffff?text=Service+5" },
-  { id: 6, title: "IDEA MARKER SPACE", desc: "บริการพื้นที่/เครื่องมือ/อุปกรณ์/ครัวทดลอง เพื่อทดลองปฏิบัติจริง", image: "https://placehold.co/400x300/166534/ffffff?text=Service+6" },
+  { id: 4, title: "IDEA PILOT PLANT", desc: "บริการสายการผลิตผลิตภัณฑ์ผักผลไม้แปรรูปและเครื่องดื่มที่ได้มาตรฐาน", image: "https://placehold.co/400x300/374151/ffffff?text=Service+4", href: "#/instrument/pilot-plant" },
+  { id: 5, title: "IDEA FOOD LAB", desc: "บริการตรวจวิเคราะห์ ทดสอบคุณภาพทางด้านเคมีกายภาพและจุลชีววิทยาในผลผลิตทางเกษตรและอาหาร", image: "https://placehold.co/400x300/4b5563/ffffff?text=Service+5", href: "#/instrument/food-lab" },
+  { id: 6, title: "IDEA MARKER SPACE", desc: "บริการพื้นที่/เครื่องมือ/อุปกรณ์/ครัวทดลอง เพื่อทดลองปฏิบัติจริง", image: "https://placehold.co/400x300/166534/ffffff?text=Service+6", href: "#/instrument/marker-space" },
   { id: 7, title: "IDEA ROOM", desc: "บริการพื้นที่ และห้องปฏิบัติการภายในอาคารนวัตกรรมฯ", image: "https://placehold.co/400x300/15803d/ffffff?text=Service+7" },
 ];
 
@@ -24,13 +24,11 @@ export default function Service() {
           {services.map((s, i) => {
             const isLastAlone =
               i === services.length - 1 && services.length % 3 === 1;
-            return (
-              <div
-                key={s.id}
-                className={`overflow-hidden rounded-2xl bg-white shadow-sm transition-shadow hover:shadow-md ${
-                  isLastAlone ? "lg:col-start-2" : ""
-                }`}
-              >
+            const cardClass = `block overflow-hidden rounded-2xl bg-white shadow-sm transition-shadow hover:shadow-md ${
+              isLastAlone ? "lg:col-start-2" : ""
+            } ${s.href ? "cursor-pointer hover:ring-2 hover:ring-green-200" : ""}`;
+            const inner = (
+              <>
                 <img
                   src={s.image}
                   alt={s.title}
@@ -42,6 +40,15 @@ export default function Service() {
                   </h3>
                   <p className="text-sm text-gray-600">{s.desc}</p>
                 </div>
+              </>
+            );
+            return s.href ? (
+              <a key={s.id} href={s.href} className={cardClass}>
+                {inner}
+              </a>
+            ) : (
+              <div key={s.id} className={cardClass}>
+                {inner}
               </div>
             );
           })}
