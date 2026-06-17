@@ -3,9 +3,21 @@ import { useState } from "react";
 // TODO: แทนที่ด้วยข้อมูลกิจกรรมจริง (วันที่รูปแบบ YYYY-MM-DD)
 type EventItem = { start: string; end: string; title: string; href?: string };
 
-// เพิ่มข้อมูลกิจกรรมในอนาคตที่นี่ เช่น
-// { start: "2026-06-01", end: "2026-06-30", title: "ชื่อกิจกรรม", href: "#" }
-const events: EventItem[] = [];
+// เพิ่มข้อมูลกิจกรรมในอนาคตที่นี่
+const events: EventItem[] = [
+  {
+    start: "2026-06-10",
+    end: "2026-06-20",
+    title: "อบรมเชิงปฏิบัติการ การพัฒนาผลิตภัณฑ์อาหารเพื่อขอเลข อย. (placeholder)",
+    href: "#",
+  },
+  {
+    start: "2026-06-25",
+    end: "2026-06-27",
+    title: "เปิดบ้าน IDEA Open House เยี่ยมชมโรงงานต้นแบบ GMP (placeholder)",
+    href: "#",
+  },
+];
 
 const thaiMonths = [
   "มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน",

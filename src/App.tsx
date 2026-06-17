@@ -4,6 +4,7 @@ import HeroSlide from "./components/HeroSlide";
 import WhyUs from "./components/WhyUs";
 import Service from "./components/Service";
 import News from "./components/News";
+import NewsPage from "./components/NewsPage";
 import EventCalendar from "./components/EventCalendar";
 import EquipmentServiceSteps from "./components/EquipmentServiceSteps";
 import SampleProcess from "./components/SampleProcess";
@@ -28,6 +29,7 @@ function App() {
   }, []);
 
   const isContact = route.startsWith("/contact");
+  const isNews = route === "/news";
   const isGmp = route.startsWith("/certificate/gmp");
   const isInstrument = route.startsWith("/instrument/");
   const instrumentSlug = isInstrument ? route.replace("/instrument/", "") : "";
@@ -37,7 +39,9 @@ function App() {
   return (
     <div className="min-h-screen font-thai">
       <Navbar />
-      {isContact ? (
+      {isNews ? (
+        <NewsPage />
+      ) : isContact ? (
         <Contact />
       ) : isGmp ? (
         <GmpPage />

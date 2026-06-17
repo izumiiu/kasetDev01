@@ -24,7 +24,7 @@ const menuItems: MenuItem[] = [
     ],
   },
   { label: "ประชาสัมพันธ์", href: "#news" },
-  { label: "ขั้นตอนการส่งตัวอย่าง", href: "#equipment-service" },
+  { label: "ขั้นตอนการให้บริการ", href: "#equipment-service" },
   {
     label: "หน่วยงานความร่วมมือ",
     children: [
