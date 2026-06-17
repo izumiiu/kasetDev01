@@ -14,7 +14,7 @@ const infoItems = [
   {
     label: "ที่ตั้งอาคาร",
     value:
-      "อาคารนวัตกรรมและเทคโนโลยีการแปรรูปผลผลิตทางเกษตรและอาหาร (IDEA) คณะเกษตรศาสตร์ ทรัพยากรธรรมชาติและสิ่งแวดล้อม มหาวิทยาลัยนเรศวร อ.เมือง จ.พิษณุโลก 65000",
+      "คณะเกษตรศาสตร์ ทรัพยากรธรรมชาติและสิ่งแวดล้อม มหาวิทยาลัยนเรศวร, 99 หมู่ 9 ตำบลท่าโพธิ์ อำเภอเมืองพิษณุโลก จังหวัดพิษณุโลก รหัสไปรษณีย์ 65000",
     icon: (
       <>
         <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
@@ -24,7 +24,7 @@ const infoItems = [
   },
   {
     label: "วันเวลาทำการ",
-    value: "จันทร์ – ศุกร์ เวลา 08.30 – 16.30 น. (เว้นวันหยุดราชการ)",
+    value: "จันทร์ – ศุกร์ เวลา 08.30 – 16.30 น.",
     icon: (
       <>
         <circle cx="12" cy="12" r="10" />
@@ -34,14 +34,14 @@ const infoItems = [
   },
   {
     label: "เบอร์โทรติดต่อ",
-    value: "055-962710",
+    value: "0 5596 3030",
     icon: (
       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" />
     ),
   },
   {
     label: "E-mail",
-    value: "idea@nu.ac.th",
+    value: "idea_agi@nu.ac.th",
     icon: (
       <>
         <rect width="20" height="16" x="2" y="4" rx="2" />
@@ -51,12 +51,14 @@ const infoItems = [
   },
   {
     label: "Facebook",
-    value: "IDEA Naresuan University",
+    value: "https://www.facebook.com/IDEA.NU01",
+    link: true,
     icon: <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />,
   },
   {
     label: "Line",
-    value: "@idea-nu",
+    value: "https://page.line.me/593lhkwy",
+    link: true,
     icon: (
       <path d="M21 11.5c0-4.14-4.03-7.5-9-7.5s-9 3.36-9 7.5c0 3.71 3.2 6.82 7.52 7.41.29.06.69.2.79.45.09.23.06.59.03.82l-.13.77c-.04.23-.18.9.79.49 1.9-.8 5.2-3.06 7.1-5.24A6.67 6.67 0 0 0 21 11.5Z" />
     ),
@@ -102,9 +104,20 @@ export default function Contact() {
                       {item.icon}
                     </svg>
                   </span>
-                  <div>
+                  <div className="min-w-0">
                     <div className="text-sm font-semibold text-gray-800">{item.label}</div>
-                    <div className="text-sm leading-relaxed text-gray-600">{item.value}</div>
+                    {item.link ? (
+                      <a
+                        href={item.value}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block break-all text-sm leading-relaxed text-green-600 hover:text-green-700 hover:underline"
+                      >
+                        {item.value}
+                      </a>
+                    ) : (
+                      <div className="text-sm leading-relaxed text-gray-600">{item.value}</div>
+                    )}
                   </div>
                 </li>
               ))}

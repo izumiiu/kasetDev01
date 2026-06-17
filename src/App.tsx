@@ -11,6 +11,7 @@ import SampleProcess from "./components/SampleProcess";
 import FormDownloads from "./components/FormDownloads";
 import Contact from "./components/Contact";
 import GmpPage from "./components/GmpPage";
+import IdeaServicesPage from "./components/IdeaServicesPage";
 import InstrumentPage from "./components/InstrumentPage";
 import InstrumentDetail from "./components/InstrumentDetail";
 import Footer from "./components/Footer";
@@ -31,6 +32,7 @@ function App() {
   const isContact = route.startsWith("/contact");
   const isNews = route === "/news";
   const isGmp = route.startsWith("/certificate/gmp");
+  const isIdeaServices = route.startsWith("/service/idea-services");
   const isInstrument = route.startsWith("/instrument/");
   const instrumentSlug = isInstrument ? route.replace("/instrument/", "") : "";
   const isInstrumentDetail = route.startsWith("/instrument-detail/");
@@ -45,6 +47,8 @@ function App() {
         <Contact />
       ) : isGmp ? (
         <GmpPage />
+      ) : isIdeaServices ? (
+        <IdeaServicesPage />
       ) : isInstrumentDetail ? (
         <InstrumentDetail id={instrumentDetailId} />
       ) : isInstrument ? (

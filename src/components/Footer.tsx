@@ -11,8 +11,11 @@ export default function Footer() {
               </div>
               <span className="text-lg font-semibold">ชื่อแบรนด์</span>
             </div>
-            <p className="text-sm text-gray-400">
-              คำอธิบายสั้น ๆ เกี่ยวกับองค์กรของคุณ (placeholder)
+            <p className="max-w-sm text-sm leading-relaxed text-gray-400">
+              อาคารนวัตกรรมเทคโนโลยีการแปรรูปผลผลิตทางเกษตรและอาหาร
+              (Center of Innovation-Driven Entrepreneurship in AgriFood: IDEA)
+              สังกัดภาควิชาอุตสาหกรรมเกษตร คณะเกษตรศาสตร์ ทรัพยากรธรรมชาติและสิ่งแวดล้อม
+              มหาวิทยาลัยนเรศวร
             </p>
           </div>
 
@@ -22,11 +25,10 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-gray-300">
               <li className="flex items-center gap-2">
                 <svg className="shrink-0 text-orange-500" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M2 12h20" />
-                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z" />
+                  <rect width="20" height="16" x="2" y="4" rx="2" />
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                 </svg>
-                <span>www.AGI.NU.ac.th</span>
+                <span>idea_agi@nu.ac.th</span>
               </li>
               <li className="flex items-start gap-2">
                 <svg className="mt-0.5 shrink-0 text-orange-500" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -34,23 +36,23 @@ export default function Footer() {
                   <circle cx="12" cy="10" r="3" />
                 </svg>
                 <span>
-                  คณะเกษตรศาสตร์ ทรัพยากรธรรมชาติและสิ่งแวดล้อม
-                  มหาวิทยาลัยนเรศวร 99 ม.9 ตำบลท่าโพธิ์ อำเภอเมือง
-                  จังหวัดพิษณุโลก 65000
+                  คณะเกษตรศาสตร์ ทรัพยากรธรรมชาติและสิ่งแวดล้อม มหาวิทยาลัยนเรศวร, 99 หมู่ 9 ตำบลท่าโพธิ์ อำเภอเมืองพิษณุโลก จังหวัดพิษณุโลก รหัสไปรษณีย์ 65000
                 </span>
               </li>
-              <li className="flex items-start gap-2">
-                <svg className="mt-0.5 shrink-0 text-orange-500" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <li className="flex items-center gap-2">
+                <svg className="shrink-0 text-orange-500" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" />
                 </svg>
-                <span>โทรศัพท์ 055-962710 Fax. 055-962709</span>
+                <span>โทรศัพท์ 0 5596 3030</span>
               </li>
             </ul>
             <div className="mt-6">
               <h4 className="mb-3 text-base font-semibold text-white">ติดตามเรา</h4>
               <div className="flex gap-3">
                 <a
-                  href="#"
+                  href="https://www.facebook.com/IDEA.NU01"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="Facebook"
                   className="flex h-9 w-9 items-center justify-center rounded-full bg-white shadow-sm transition-transform hover:-translate-y-0.5"
                 >
@@ -59,7 +61,9 @@ export default function Footer() {
                   </svg>
                 </a>
                 <a
-                  href="#"
+                  href="https://page.line.me/593lhkwy"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="Line"
                   className="flex h-9 w-9 items-center justify-center rounded-full bg-white shadow-sm transition-transform hover:-translate-y-0.5"
                 >
@@ -70,7 +74,6 @@ export default function Footer() {
               </div>
             </div>
           </div>
-
 
           {/* NU Map */}
           <div>

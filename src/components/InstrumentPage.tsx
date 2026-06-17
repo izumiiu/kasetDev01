@@ -38,6 +38,188 @@ export default function InstrumentPage({ slug }: { slug: string }) {
         </div>
       </div>
 
+      {/* Category long detail */}
+      {slug === "pilot-plant" && (
+        <div className="mx-auto max-w-7xl px-4 pt-12 lg:px-8">
+          <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-gray-100 md:p-8">
+            <h2 className="text-2xl font-bold text-gray-700">FOOD PILOT PLANT</h2>
+            <p className="mt-3 text-sm leading-relaxed text-gray-600 md:text-base">
+              มีโรงงานที่ได้ตามหลักเกณฑ์และวิธีการที่ดีในการผลิตอาหาร (Good Manufacturing
+              Practice) มีเครื่องจักรและอุปกรณ์ที่ทันสมัยครบครันสำหรับให้บริการผู้ประกอบการ
+              แปรรูปอาหารจากผลผลิตทางการเกษตรและเครื่องดื่ม ดังนี้
+            </p>
+
+            {/* GMP production lines */}
+            <h3 className="mt-6 inline-block rounded-lg bg-green-100 px-3 py-1 text-base font-semibold text-green-700">
+              สายการผลิตที่ได้รับมาตรฐาน GMP
+            </h3>
+            <ol className="mt-4 space-y-3">
+              <li className="flex gap-3">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-green-500 text-xs font-bold text-white">1</span>
+                <p className="text-sm leading-relaxed text-gray-700">
+                  สายการผลิตเครื่องดื่มด้วยเทคโนโลยีการแปรรูปด้วยความดันสูง{" "}
+                  <a
+                    href="https://www.nfi.or.th/datas/files/June2019_HPP.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-orange-600 underline decoration-orange-300 underline-offset-2 hover:text-orange-700"
+                  >
+                    (High Pressure Processing; HPP)
+                  </a>
+                </p>
+              </li>
+              <li className="flex gap-3">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-green-500 text-xs font-bold text-white">2</span>
+                <div>
+                  <p className="text-sm font-medium text-gray-700">
+                    สายการผลิตผลิตภัณฑ์อบแห้ง (Drying)
+                  </p>
+                  <ul className="mt-2 grid gap-1.5 sm:grid-cols-2">
+                    {[
+                      "เครื่องอบลมร้อน (Hot air oven)",
+                      "เครื่องอบแห้งแบบสุญญากาศ (Vacuum Dryer)",
+                      "เครื่องอบแห้งอินฟราเรดสุญญากาศ (Infrared Vacuum Dryer)",
+                      "เครื่องอบแห้งไมโครเวฟสุญญากาศ (Microwave Vacuum Dryer)",
+                      "เครื่องทำแห้งแบบแช่เยือกแข็ง (Freeze Dryer)",
+                      "เครื่องแช่ติดลบแบบลมเย็น (Air Blast Freezer)",
+                    ].map((t) => (
+                      <li key={t} className="flex items-start gap-2 text-sm text-gray-600">
+                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-orange-500" />
+                        {t}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </li>
+            </ol>
+
+            {/* Other tools */}
+            <h3 className="mt-8 inline-block rounded-lg bg-green-100 px-3 py-1 text-base font-semibold text-green-700">
+              การให้บริการเครื่องมืออื่น ๆ
+            </h3>
+            <p className="mt-3 text-sm leading-relaxed text-gray-600">
+              สำหรับนักวิจัยในการพัฒนาผลิตภัณฑ์ระดับห้องปฏิบัติการและระดับย่อม
+              เพื่อทดลองก่อนผลิตออกสู่ท้องตลาด เช่น
+            </p>
+            <ul className="mt-4 grid gap-1.5 sm:grid-cols-2">
+              {[
+                "เครื่องทอดสุญญากาศ (Vacuum Fryer)",
+                "เครื่องทำแห้งแบบพ่นฝอย (Spray Dryer)",
+                "เครื่องอัดรีดอาหารชนิดสกรูคู่/สกรูเดี่ยว (Extruder)",
+                "เครื่องให้ความร้อนด้วยคลื่นวิทยุแบบสายพาน (Radio Frequency Heating)",
+                "การฆ่าเชื้อด้วยระบบรีทอร์ท (Retort Sterilization)",
+                "เครื่องปั่นอาหาร (Colloid mill)",
+                "ชุดถังกวนผสม (pH Adjustable Tank 70L)",
+                "ชุดถังกวนผสม (Protein Washing Tank 70L)",
+                "ชุดถังกวนผสม (Mixing Tank 70L - Double Jacket)",
+                "เครื่องมือสำหรับบรรจุผลิตภัณฑ์ เช่น เครื่องซีลสุญญากาศ, เครื่องปิดฝากระป๋องอลูมิเนียม, เครื่องซีลระบบสุญญากาศ/เติมแก๊ส เป็นต้น",
+              ].map((t) => (
+                <li key={t} className="flex items-start gap-2 text-sm text-gray-600">
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-500" />
+                  {t}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
+
+      {/* Category long detail: food-lab */}
+      {slug === "food-lab" && (
+        <div className="mx-auto max-w-7xl px-4 pt-12 lg:px-8">
+          <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-gray-100 md:p-8">
+            <h2 className="text-2xl font-bold text-gray-700">FUTURE FOOD LAB</h2>
+
+            {[
+              {
+                heading: 'งานบริการเครื่องมือตรวจวิเคราะห์องค์ประกอบ "ด้านเคมีในผลผลิตทางเกษตรและอาหาร"',
+                items: [
+                  "วิเคราะห์องค์ประกอบทางเคมีในอาหาร (Proximate)",
+                  "วิเคราะห์ปริมาณน้ำอิสระ (Aw)",
+                  "วิเคราะห์ค่าความเป็นกรด-ด่าง (pH Meter)",
+                  "เครื่องเนียร์อินฟราเรดสเปกโทรมิเตอร์ (NIR)",
+                  "วิเคราะห์ค่าพลังงานรวม (Bomb Calorimeter)",
+                  "วิเคราะห์คุณสมบัติทางพลังงานความร้อน (DSC)",
+                  "วิเคราะห์กลุ่มสารอินทรีย์ที่ระเหยง่าย (GC-O-MS)",
+                  "วิเคราะห์คุณภาพและปริมาณของสาระสำคัญต่าง ๆ (HPLC)",
+                ],
+              },
+              {
+                heading: 'งานบริการเครื่องมือตรวจวิเคราะห์ "ด้านกายภาพในผลผลิตทางเกษตรและอาหาร"',
+                items: [
+                  "วิเคราะห์คุณสมบัติทางด้านความหนืดแบบรวดเร็ว (RVA)",
+                  "วิเคราะห์คุณสมบัติการดูดน้ำของแป้งสาลี (Dough Lab)",
+                  "วิเคราะห์คุณสมบัติการไหลของสสาร (Rheometer)",
+                  "วิเคราะห์คุณสมบัติด้านเนื้อสัมผัส (Texture Analyzer)",
+                ],
+              },
+              {
+                heading: "งานบริการเครื่องมือตรวจด้านจุลชีววิทยา",
+                items: [
+                  "วิเคราะห์เชื้อจุลินทรีย์ทั้งหมด",
+                  "แบคทีเรียผลิตกรดแล็กติก",
+                  "ยีสต์และรา",
+                ],
+              },
+              {
+                heading: "บริการประเมินอายุการเก็บรักษาผลิตภัณฑ์อาหาร (Shelf Life Evaluation)",
+                intro: "ศึกษาการเสื่อมเสียของอาหารในด้านต่าง ๆ ได้แก่",
+                items: [
+                  "การเสื่อมเสียทางกายภาพ (Physical)",
+                  "การเสื่อมเสียทางด้านเคมี (Chemical)",
+                  "การเสื่อมเสียทางจุลินทรีย์ (Microbiology)",
+                  "การเสื่อมเสียทางด้านประสาทสัมผัส (Sensory Evaluation)",
+                ],
+              },
+            ].map((sec) => (
+              <div key={sec.heading} className="mt-6">
+                <h3 className="inline-block rounded-lg bg-green-100 px-3 py-1 text-base font-semibold text-green-700">
+                  {sec.heading}
+                </h3>
+                {sec.intro && (
+                  <p className="mt-2 text-sm text-gray-600">{sec.intro}</p>
+                )}
+                <ul className="mt-3 grid gap-1.5 sm:grid-cols-2">
+                  {sec.items.map((t) => (
+                    <li key={t} className="flex items-start gap-2 text-sm text-gray-600">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-orange-500" />
+                      {t}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Category long detail: marker-space */}
+      {slug === "marker-space" && (
+        <div className="mx-auto max-w-7xl px-4 pt-12 lg:px-8">
+          <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-gray-100 md:p-8">
+            <h2 className="text-2xl font-bold text-gray-700">FOOD MARKER SPACE</h2>
+
+            <div className="mt-4">
+              <h3 className="inline-block rounded-lg bg-green-100 px-3 py-1 text-base font-semibold text-green-700">
+                บริการพื้นที่ / เครื่องมือ / อุปกรณ์ / ครัวทดลอง
+              </h3>
+              <blockquote className="mt-3 border-l-4 border-orange-500 bg-orange-50 px-4 py-2 text-sm italic text-gray-700">
+                "พร้อมด้วยเครื่องมืออุปกรณ์สำหรับการพัฒนาผลิตภัณฑ์เพื่อนำไปต่อยอดขยายผลต่อไป"
+              </blockquote>
+            </div>
+
+            <div className="mt-6">
+              <h3 className="inline-block rounded-lg bg-green-100 px-3 py-1 text-base font-semibold text-green-700">
+                ห้องปฏิบัติการทดสอบทางประสาทสัมผัส (Sensory Testing Lab)
+              </h3>
+              <blockquote className="mt-3 border-l-4 border-orange-500 bg-orange-50 px-4 py-2 text-sm italic text-gray-700">
+                "ผู้วิจัยและผู้ผลิตสามารถปรับปรุงผลิตภัณฑ์ให้เหมาะสมกับความต้องการของตลาดได้ดีขึ้น"
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Instruments table */}
       <div className="mx-auto max-w-7xl px-4 py-14 lg:px-8">
         <div className="overflow-hidden rounded-2xl ring-1 ring-gray-200 shadow-sm">

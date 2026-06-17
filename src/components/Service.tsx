@@ -1,6 +1,6 @@
 // TODO: แทนที่รูปและข้อความด้วยข้อมูลบริการจริง 7 อย่าง
 const services = [
-  { id: 1, title: "IDEA SERVICES", desc: "บริการให้คำปรึกษาเพื่อพัฒนาผลิตภัณฑ์ และ การขอเลข อย.", image: "https://placehold.co/400x300/22c55e/ffffff?text=Service+1" },
+  { id: 1, title: "IDEA SERVICES", desc: "บริการให้คำปรึกษาเพื่อพัฒนาผลิตภัณฑ์ และ การขอเลข อย.", image: "https://placehold.co/400x300/22c55e/ffffff?text=Service+1", href: "#/service/idea-services" },
   { id: 2, title: "IDEA TRAINNING", desc: "การฝึกอบรมด้านเทคโนโลยีการผลิตและนวัตกรรมใหม่ๆ", image: "https://placehold.co/400x300/16a34a/ffffff?text=Service+2" },
   { id: 3, title: "IDEA R&D", desc: "บริการการวิจัยและพัฒนานวัตกรรมผลิตภัณฑ์อาหารในระดับห้องปฏิบัติการ", image: "https://placehold.co/400x300/f97316/ffffff?text=Service+3" },
   { id: 4, title: "IDEA PILOT PLANT", desc: "บริการสายการผลิตผลิตภัณฑ์ผักผลไม้แปรรูปและเครื่องดื่มที่ได้มาตรฐาน", image: "https://placehold.co/400x300/374151/ffffff?text=Service+4", href: "#/instrument/pilot-plant" },
