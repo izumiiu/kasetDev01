@@ -2,7 +2,14 @@ import { useEffect } from "react";
 
 const BASE = import.meta.env.BASE_URL;
 
-type Member = { name: string; role: string; sub?: string; image: string };
+type Member = {
+  name: string;
+  role: string;
+  sub?: string;
+  image: string;
+  phone?: string;
+  email?: string;
+};
 
 // TODO: วางรูปไว้ที่ public/committee/ (เช่น 1.jpg) — ที่ยังไม่มีรูปจะแสดงไอคอนแทน
 const board: Member[] = [
@@ -23,6 +30,31 @@ const advisors: Member[] = [
   { name: "คณบดีคณะเกษตรศาสตร์ ทรัพยากรธรรมชาติและสิ่งแวดล้อม", sub: "(ผู้ช่วยศาสตราจารย์ ดร.ชนินทร์ อัมพรสถิร)", role: "ที่ปรึกษา", image: `${BASE}committee/a1.jpg` },
   { name: "รองคณบดีฝ่ายวิชาการ", sub: "(รองศาสตราจารย์ ดร.ธนัชสัณห์ พูนไพบูลย์พิพิพัฒน์)", role: "ที่ปรึกษา", image: `${BASE}committee/a2.jpg` },
   { name: "หัวหน้าภาควิชาอุตสาหกรรมเกษตร", sub: "(รองศาสตราจารย์ ดร.ทิพวรรณ ทองสุข)", role: "ที่ปรึกษา", image: `${BASE}committee/a3.jpg` },
+];
+
+// บุคลากรประจำตึก — วางรูปไว้ที่ public/staff/ (เช่น 1.jpg) — ที่ยังไม่มีรูปจะแสดงไอคอนแทน
+const staff: Member[] = [
+  {
+    name: "นางสาวปิยพร ศิริคง",
+    role: "นักวิทยาศาสตร์ (Food Pilot Plant)",
+    phone: "089 437 9321",
+    email: "piyaporns@nu.ac.th",
+    image: `${BASE}staff/1.jpg`,
+  },
+  {
+    name: "นางสาววนัชพร ชำนาญช่าง",
+    role: "นักวิทยาศาสตร์ (Future Food Lab)",
+    phone: "088 159 2565",
+    email: "wanatchapornc@nu.ac.th",
+    image: `${BASE}staff/2.jpg`,
+  },
+  {
+    name: "นายธีรพงศ์ พรมจันทร์",
+    role: "ผู้ปฏิบัติงานโภชนาการ (Food Maker Space)",
+    phone: "095 292 9179",
+    email: "theerapongp@nu.ac.th",
+    image: `${BASE}staff/3.jpg`,
+  },
 ];
 
 function Card({ m }: { m: Member }) {
@@ -53,6 +85,27 @@ function Card({ m }: { m: Member }) {
         <span className="mt-2 inline-block rounded-full bg-green-100 px-3 py-0.5 text-xs font-medium text-green-600">
           {m.role}
         </span>
+        {(m.phone || m.email) && (
+          <div className="mt-3 space-y-1 text-xs text-gray-600">
+            {m.phone && (
+              <div className="flex items-center justify-center gap-1.5">
+                <svg className="shrink-0 text-orange-500" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" />
+                </svg>
+                <span>{m.phone}</span>
+              </div>
+            )}
+            {m.email && (
+              <div className="flex items-center justify-center gap-1.5">
+                <svg className="shrink-0 text-orange-500" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect width="20" height="16" x="2" y="4" rx="2" />
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg>
+                <a href={`mailto:${m.email}`} className="break-all hover:text-green-600">{m.email}</a>
+              </div>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );
@@ -75,7 +128,7 @@ export default function CommitteePage() {
             เกี่ยวกับเรา
           </span>
           <h1 className="mt-3 text-3xl font-bold text-gray-700 md:text-4xl">
-            คณะกรรมการดำเนินงาน
+            คณะกรรมการดำเนินงานและบุคลากรตึก
           </h1>
         </div>
       </div>
@@ -94,6 +147,15 @@ export default function CommitteePage() {
           <h2 className="mb-6 text-xl font-bold text-gray-700">คณะกรรมการที่ปรึกษา</h2>
           <div className="grid gap-5 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
             {advisors.map((m) => (
+              <Card key={m.name} m={m} />
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-14">
+          <h2 className="mb-6 text-xl font-bold text-gray-700">บุคลากรตึก</h2>
+          <div className="grid gap-5 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
+            {staff.map((m) => (
               <Card key={m.name} m={m} />
             ))}
           </div>

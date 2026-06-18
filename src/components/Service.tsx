@@ -1,12 +1,14 @@
 // TODO: แทนที่รูปและข้อความด้วยข้อมูลบริการจริง 7 อย่าง
+const BASE = import.meta.env.BASE_URL;
+
 const services = [
-  { id: 1, title: "IDEA SERVICES", desc: "บริการให้คำปรึกษาเพื่อพัฒนาผลิตภัณฑ์ และ การขอเลข อย.", image: "https://placehold.co/400x300/22c55e/ffffff?text=Service+1", href: "#/service/idea-services" },
-  { id: 2, title: "IDEA TRAINNING", desc: "การฝึกอบรมด้านเทคโนโลยีการผลิตและนวัตกรรมใหม่ๆ", image: "https://placehold.co/400x300/16a34a/ffffff?text=Service+2" },
-  { id: 3, title: "IDEA R&D", desc: "บริการการวิจัยและพัฒนานวัตกรรมผลิตภัณฑ์อาหารในระดับห้องปฏิบัติการ", image: "https://placehold.co/400x300/f97316/ffffff?text=Service+3" },
-  { id: 4, title: "IDEA PILOT PLANT", desc: "บริการสายการผลิตผลิตภัณฑ์ผักผลไม้แปรรูปและเครื่องดื่มที่ได้มาตรฐาน", image: "https://placehold.co/400x300/374151/ffffff?text=Service+4", href: "#/instrument/pilot-plant" },
-  { id: 5, title: "IDEA FOOD LAB", desc: "บริการตรวจวิเคราะห์ ทดสอบคุณภาพทางด้านเคมีกายภาพและจุลชีววิทยาในผลผลิตทางเกษตรและอาหาร", image: "https://placehold.co/400x300/4b5563/ffffff?text=Service+5", href: "#/instrument/food-lab" },
-  { id: 6, title: "IDEA MARKER SPACE", desc: "บริการพื้นที่/เครื่องมือ/อุปกรณ์/ครัวทดลอง เพื่อทดลองปฏิบัติจริง", image: "https://placehold.co/400x300/166534/ffffff?text=Service+6", href: "#/instrument/marker-space" },
-  { id: 7, title: "IDEA ROOM", desc: "บริการพื้นที่ และห้องปฏิบัติการภายในอาคารนวัตกรรมฯ", image: "https://placehold.co/400x300/15803d/ffffff?text=Service+7" },
+  { id: 1, title: "IDEA SERVICES", desc: "บริการให้คำปรึกษาเพื่อพัฒนาผลิตภัณฑ์ และ การขอเลข อย.", image: `${BASE}idea-services/15.jpg`, href: "#/service/idea-services" },
+  { id: 2, title: "IDEA TRAINING", desc: "การฝึกอบรมด้านเทคโนโลยีการผลิตและนวัตกรรมใหม่ๆ", image: `${BASE}idea-services/7.jpg` },
+  { id: 3, title: "IDEA R&D", desc: "บริการการวิจัยและพัฒนานวัตกรรมผลิตภัณฑ์อาหารในระดับห้องปฏิบัติการ", image: `${BASE}idea-services/9.jpg` },
+  { id: 4, title: "IDEA PILOT PLANT", desc: "บริการสายการผลิตผลิตภัณฑ์ผักผลไม้แปรรูปและเครื่องดื่มที่ได้มาตรฐาน", image: `${BASE}idea-services/11.jpg`, href: "#/instrument/pilot-plant" },
+  { id: 5, title: "IDEA FOOD LAB", desc: "บริการตรวจวิเคราะห์ ทดสอบคุณภาพทางด้านเคมีกายภาพและจุลชีววิทยาในผลผลิตทางเกษตรและอาหาร", image: `${BASE}idea-services/10.jpg`, href: "#/instrument/food-lab" },
+  { id: 6, title: "IDEA MAKER SPACE", desc: "บริการพื้นที่/เครื่องมือ/อุปกรณ์/ครัวทดลอง เพื่อทดลองปฏิบัติจริง", image: `${BASE}idea-services/6.jpg`, href: "#/instrument/marker-space" },
+  { id: 7, title: "IDEA ROOM", desc: "บริการพื้นที่ และห้องปฏิบัติการภายในอาคารนวัตกรรมฯ", image: `${BASE}idea-services/5.jpg` },
 ];
 
 export default function Service() {
@@ -16,7 +18,7 @@ export default function Service() {
         <div className="mx-auto mb-12 max-w-2xl text-center">
           <h2 className="text-3xl font-bold text-gray-700">บริการของเรา</h2>
           <p className="mt-3 text-gray-600">
-            บริการที่เราพร้อมให้บริการแก่คุณ (placeholder)
+            บริการที่เราพร้อมให้บริการแก่คุณ
           </p>
         </div>
 

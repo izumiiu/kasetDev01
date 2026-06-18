@@ -211,7 +211,7 @@ export default function InstrumentPage({ slug }: { slug: string }) {
       {slug === "marker-space" && (
         <div className="mx-auto max-w-7xl px-4 pt-12 lg:px-8">
           <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-gray-100 md:p-8">
-            <h2 className="text-2xl font-bold text-gray-700">FOOD MARKER SPACE</h2>
+            <h2 className="text-2xl font-bold text-gray-700">FOOD MAKER SPACE</h2>
 
             <div className="mt-4">
               <h3 className="inline-block rounded-lg bg-green-100 px-3 py-1 text-base font-semibold text-green-700">

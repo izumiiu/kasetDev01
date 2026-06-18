@@ -1,10 +1,24 @@
 import { useEffect, useState } from "react";
 
-// TODO: แทนที่ด้วยรูปจริงของคุณ
+const BASE = import.meta.env.BASE_URL;
+
+// วางรูปไว้ที่ public/hero/ (1.jpg, 2.jpg, 3.jpg)
 const slides = [
-  { id: 1, image: "https://placehold.co/1600x600/22c55e/ffffff?text=Slide+1", caption: "สไลด์ที่ 1" },
-  { id: 2, image: "https://placehold.co/1600x600/f97316/ffffff?text=Slide+2", caption: "สไลด์ที่ 2" },
-  { id: 3, image: "https://placehold.co/1600x600/374151/ffffff?text=Slide+3", caption: "สไลด์ที่ 3" },
+  {
+    id: 1,
+    image: `${BASE}hero/1.jpg`,
+    // caption: "อาคารนวัตกรรมเทคโนโลยีการแปรรูปผลผลิตทางเกษตรและอาหาร",
+  },
+  {
+    id: 2,
+    image: `${BASE}hero/2.jpg`,
+    // caption: "Center of Innovation-Driven Entrepreneurship in AgriFood (IDEA)",
+  },
+  {
+    id: 3,
+    image: `${BASE}hero/3.jpg`,
+    // caption: "FoodInnopolis @NU มหาวิทยาลัยนเรศวร",
+  },
 ];
 
 export default function HeroSlide() {
@@ -29,9 +43,16 @@ export default function HeroSlide() {
         >
           <img
             src={slide.image}
-            alt={slide.caption}
+            // alt={slide.caption}
             className="h-full w-full object-cover"
           />
+          {/* gradient + caption */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
+          <div className="absolute bottom-12 left-1/2 w-full max-w-4xl -translate-x-1/2 px-6 text-center">
+            {/* <p className="text-base font-semibold text-white drop-shadow md:text-2xl">
+              {slide.caption}
+            </p> */}
+          </div>
         </div>
       ))}
 
