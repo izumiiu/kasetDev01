@@ -64,10 +64,19 @@ export default function Navbar() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 lg:px-8">
         {/* Logo */}
         <a href="#home" className="flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-500 font-bold text-white">
-            LOGO
+          <img
+            src={`${import.meta.env.BASE_URL}logo.png`}
+            alt="โลโก้"
+            className="h-12 w-12 object-contain"
+          />
+          <div className="leading-tight">
+            <div className="text-lg font-bold text-gray-700">IDEA NU</div>
+            <div className="hidden max-w-xs text-[10px] leading-tight text-gray-400 sm:block">
+              อาคารนวัตกรรมเทคโนโลยีการแปรรูปผลผลิตทางเกษตรและอาหาร
+              {/* <br />
+              (Center of Innovation-Driven Entrepreneurship in AgriFood: IDEA) */}
+            </div>
           </div>
-          <span className="text-lg font-semibold text-gray-700">ชื่อแบรนด์</span>
         </a>
 
         {/* Desktop menu */}
@@ -79,7 +88,6 @@ export default function Navbar() {
                   {item.label}
                   <ChevronDown className="transition-transform group-hover:rotate-180" />
                 </button>
-                {/* Dropdown */}
                 <ul className="invisible absolute left-0 top-full z-50 w-64 translate-y-1 rounded-xl border border-gray-100 bg-white py-2 opacity-0 shadow-lg transition-all duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
                   {item.children.map((sub) => (
                     <li key={sub.label}>

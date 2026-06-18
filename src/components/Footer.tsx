@@ -1,15 +1,17 @@
 export default function Footer() {
   return (
     <footer id="contact" className="border-t-4 border-orange-500 bg-gray-800 text-gray-100">
-      <div className="mx-auto max-w-7xl px-4 py-12 lg:px-8">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mx-auto max-w-7xl px-4 py-9 lg:px-8">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {/* Brand */}
           <div>
             <div className="mb-3 flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-500 font-bold text-white">
-                LOGO
-              </div>
-              <span className="text-lg font-semibold">ชื่อแบรนด์</span>
+              <img
+                src={`${import.meta.env.BASE_URL}logo.png`}
+                alt="โลโก้"
+                className="h-14 w-14 object-contain"
+              />
+              <span className="text-lg font-semibold">IDEA NU</span>
             </div>
             <p className="max-w-sm text-sm leading-relaxed text-gray-400">
               อาคารนวัตกรรมเทคโนโลยีการแปรรูปผลผลิตทางเกษตรและอาหาร
@@ -85,7 +87,7 @@ export default function Footer() {
                 src="https://numap.nu.ac.th/"
                 title="NU Map"
                 loading="lazy"
-                className="h-40 w-full border-0"
+                className="h-32 w-full border-0"
               />
               <a
                 href="https://numap.nu.ac.th/"
@@ -103,7 +105,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-gray-700 pt-6 text-center text-sm text-gray-400">
+        <div className="mt-7 border-t border-gray-700 pt-5 text-center text-sm text-gray-400">
           © {new Date().getFullYear()} ชื่อแบรนด์. สงวนลิขสิทธิ์.
         </div>
       </div>

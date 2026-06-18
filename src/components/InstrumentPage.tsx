@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { instruments, categories } from "../data/instruments";
 
 export default function InstrumentPage({ slug }: { slug: string }) {
@@ -8,6 +8,20 @@ export default function InstrumentPage({ slug }: { slug: string }) {
 
   const cat = categories[slug];
   const items = instruments.filter((it) => it.category === slug);
+  const [feeIdx, setFeeIdx] = useState(0);
+  const feeConfig: Record<string, { dir: string; count: number }> = {
+    "pilot-plant": { dir: "pilot-fees", count: 4 },
+    "food-lab": { dir: "lab-fees", count: 5 },
+    "marker-space": { dir: "space-fees", count: 5 },
+  };
+  const fee = feeConfig[slug];
+  const feeImages = fee
+    ? Array.from(
+        { length: fee.count },
+        (_, i) => `${import.meta.env.BASE_URL}${fee.dir}/fee-${i + 1}.jpg`
+      )
+    : [];
+  const feePdf = fee ? `${import.meta.env.BASE_URL}${fee.dir}/fee.pdf` : "";
 
   if (!cat) {
     return (
@@ -280,6 +294,77 @@ export default function InstrumentPage({ slug }: { slug: string }) {
           </div>
         </div>
       </div>
+
+      {/* Service fee gallery */}
+      {fee && (
+        <div className="mx-auto max-w-7xl px-4 pt-12 lg:px-8">
+          <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-gray-100 md:p-8">
+            <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
+              <h2 className="text-2xl font-bold text-gray-700">
+                อัตราค่าบริการเครื่องมือแปรรูปอาหาร
+              </h2>
+              <a
+                href={feePdf}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-lg border border-green-500 px-4 py-2 text-sm font-medium text-green-600 transition-colors hover:bg-green-500 hover:text-white"
+              >
+                ดาวน์โหลด PDF
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+              </a>
+            </div>
+
+            <div className="relative mx-auto max-w-[38rem]">
+              <div className="overflow-hidden rounded-xl bg-gray-100 ring-1 ring-gray-200">
+                <img
+                  src={feeImages[feeIdx]}
+                  alt={`อัตราค่าบริการ หน้า ${feeIdx + 1}`}
+                  className="w-full object-contain"
+                />
+              </div>
+              <button
+                onClick={() => setFeeIdx((c) => (c - 1 + feeImages.length) % feeImages.length)}
+                aria-label="ก่อนหน้า"
+                className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-2 text-gray-800 shadow hover:bg-white"
+              >
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="15 18 9 12 15 6" />
+                </svg>
+              </button>
+              <button
+                onClick={() => setFeeIdx((c) => (c + 1) % feeImages.length)}
+                aria-label="ถัดไป"
+                className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-2 text-gray-800 shadow hover:bg-white"
+              >
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </button>
+              <span className="absolute bottom-3 right-3 rounded-full bg-black/50 px-3 py-1 text-xs font-medium text-white">
+                {feeIdx + 1} / {feeImages.length}
+              </span>
+            </div>
+
+            {/* dots */}
+            <div className="mt-4 flex justify-center gap-2">
+              {feeImages.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setFeeIdx(i)}
+                  aria-label={`ไปหน้า ${i + 1}`}
+                  className={`h-2.5 w-2.5 rounded-full transition-colors ${
+                    i === feeIdx ? "bg-green-500" : "bg-gray-300 hover:bg-gray-400"
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
