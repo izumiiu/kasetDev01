@@ -11,6 +11,7 @@ import SampleProcess from "./components/SampleProcess";
 import FormDownloads from "./components/FormDownloads";
 import Contact from "./components/Contact";
 import GmpPage from "./components/GmpPage";
+import IsoPage from "./components/IsoPage";
 import AboutPage from "./components/AboutPage";
 import VisionPage from "./components/VisionPage";
 import StructurePage from "./components/StructurePage";
@@ -49,6 +50,7 @@ function App() {
   const isContact = route.startsWith("/contact");
   const isNews = route === "/news";
   const isGmp = route.startsWith("/certificate/gmp");
+  const isIso = route.startsWith("/certificate/iso-17025");
   const isAbout = route.startsWith("/about/idea");
   const isVision = route.startsWith("/about/vision");
   const isStructure = route.startsWith("/about/structure");
@@ -68,6 +70,8 @@ function App() {
         <Contact />
       ) : isGmp ? (
         <GmpPage />
+      ) : isIso ? (
+        <IsoPage />
       ) : isAbout ? (
         <AboutPage />
       ) : isVision ? (
